@@ -1,0 +1,9 @@
+{
+	"label"            : "Oignon",
+	"descriptionShort" : "",
+	"descriptionLong"  : "",
+	"isNaturalProduct" : true,
+	"isVegetable"      : true,
+	"logo"             : "onion.jpg",
+	"tags"             : []
+}

@@ -1,0 +1,9 @@
+{
+	"label"            : "Haricot blanc",
+	"benefits"         : "Facile à digérer. Riche en protéines et en glucides. Faible en calories.",
+	"nutritional_value": "Le haricot blanc est une légumineuse qui se caractérise par des teneurs élevées en protéines et glucides complexes mais aussi en fibres, vitamines, minéraux. Ils se consomment frais ou secs mais toujours cuits.<br/><br/>Le haricot blanc contient des proportions importantes de protéines et de glucides. Ces derniers sont essentiellement composés de glucides complexes, à l’inverse des légumes frais, qui renferment une majorité de sucres simples.<br/><br/>Il constitue une bonne source de vitamines C,B1, B3 et B9 ; et fournit une quantité intéressante de fer, de potassium, de calcium et de magnésium, zinc, manganèse.<br/><br/>Ses fibres atteignent plus de 5 grammes aux 100 grammes, tandis que la moyenne des légumes frais se situe entre 2 et 3 grammes pour 100 grammes. Elles sont composées de celluloses, d’hémicelluloses et de pectines.",
+	"isNaturalProduct" : true,
+	"isVegetable"      : true,
+	"logo"             : "bean_white.webp",
+	"tags"             : [ "Digestion" ]
+}

@@ -1,0 +1,9 @@
+{
+	"label"            : "Chou cabus (Chou blanc)",
+	"descriptionShort" : "",
+	"descriptionLong"  : "",
+	"isNaturalProduct" : true,
+	"isVegetable"      : true,
+	"logo"             : "cabbage.webp",
+	"tags"             : []
+}

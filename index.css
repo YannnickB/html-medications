@@ -1,0 +1,28 @@
+#list{}
+
+#list > div{}
+
+#list > div:first-child{
+	border-top-width: 0px;
+}
+#list > div > h4{
+	padding: 0rem;
+	margin: 0rem;
+}
+#list > div > img{
+	height: 3rem;
+	float: left;
+	margin-right: 1rem;
+}
+
+
+
+#templates{
+	display: none;
+}
+
+
+/** */
+.text-vegetable{
+	color: #ff8400;
+}

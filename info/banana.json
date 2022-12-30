@@ -1,0 +1,14 @@
+{
+	"label"            : "Banane",
+	"descriptionShort" : "",
+	"descriptionLong"  : "",
+	"isNaturalProduct" : true,
+	"logo"             : "banana.jpg",
+	"posologies"       : [
+		{
+			"label"       : "Piqure moustique",
+			"description" : "Appliquer la face intérieure de la pellure sur la piqure"
+		}
+	],
+	"tags"             : []
+}

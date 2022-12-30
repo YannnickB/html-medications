@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	
+	<!-- Font Awesome-->
+	<link href="node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+
+	<!-- -->
+	<link rel="stylesheet" href="index.css">
+
+	<title>Medecine</title>
+</head>
+<body>
+
+	<div class="container">
+		<h1>Medecine</h1>
+	</div>
+	
+	<div class="container mb-2">
+		<div class="row">
+			<div class="col-12 col-md">
+				<label for="searchIsNaturalProduct">Text</label>
+				<input type="text" class="form-control mr-sm-2" id="searchTextInput" placeholder="Search"></input>
+			</div>
+			<div class="col-12 col-md">
+				<label for="searchIsNaturalProduct">Natural Product</label>
+				<select class="form-control mr-sm-2" id="searchIsNaturalProduct">
+					<option value="-1">---</option>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</select>
+			</div>
+			<div class="col-12 col-md">
+				<label for="searchIsVegetable">Vegetable</label>
+				<select class="form-control mr-sm-2" id="searchIsVegetable">
+					<option value="-1">---</option>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</select>
+			</div>
+  		</div>
+	</div>
+	
+	<div class="container mb-5">
+		<div class="card">
+			<div id="list" class="list-group list-group-flush"></div>
+		</div>
+	</div>
+	
+	
+	<div id="templates">
+		<div id="itemTemplate" class="template">
+			<div id="{ID}" class="list-group-item list-group-item-action">
+				<div class="row">
+					<div class="col-12">
+						<div class="float-end">
+							<span class="isVegetable text-vegetable"><span class="fa fa-2x fa-carrot" title="Vegetable"></span></span>
+							<span class="isNaturalProduct text-success"><span class="fa fa-2x fa-leaf" title="Natural product"></span></span>
+						</div>
+						<h5 class="itemLabel card-title"></h5>
+					</div>
+					<div class="col-6 offset-3 offset-md-0 col-md-2 mb-4">
+						<a href="" target="_blank"><img class="w-100 rounded border bg-light"></img></a>
+					</div>
+					<div class="col-md-10">
+						<div class="itemDescriptionsLayout mb-2">
+							<div class="itemDescShort card-text"></div>
+							<div><small class="itemDescLong card-text"></small></div>
+						</div>
+						<div class="itemBenefitsLayout mb-2">
+							<b class="mb-2"><span class="fa fa-check text-success"></span> Bienfaits</b>
+							<div class="">
+								<div class="benefits card-body"></div>
+							</div>
+						</div>
+						<div class="itemNutritionalValueLayout mb-2">
+							<b class="mb-2 "><span class="fa fa-drumstick-bite"></span> Valeur nutritionelle</b>
+							<div class="">
+								<div class="nutritionalValue card-body"></div>
+							</div>
+						</div>
+						<div class="itemPosologiesLayout mb-2">
+							<b class="mb-2"><span class="fa fa-mortar-pestle"></span> Posologies</b>
+							<div class="">
+								<div class="posologies list-group list-group-flush"></div>
+							</div>
+						</div>
+						<div class="itemDescIngredientsLayout mb-2">
+							<b><span class="fa fa-carrot"></span> Ingredients</b>
+							<p class="itemDescIngredientsValue card-text mx-4"></p>
+						</div>
+						<div class="itemDescWarningLayout mb-2">
+							<b><span class="fa fa-skull-crossbones"></span> Warning</b>
+							<p class="itemDescWarningValue card-text mx-4"></p>
+						</div>
+						<div class="photos text-center mb-2"></div>
+						
+						<div class="row">
+							<div class="offset-md-8 col-md-4">
+								<div class="tags text-right"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery and Bootstrap Bundle (includes Popper) -->
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+	<script src="index.js"></script>
+
+</body>
+</html>
+

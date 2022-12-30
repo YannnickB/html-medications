@@ -1,0 +1,8 @@
+{
+	"label"            : "Miel",
+	"descriptionShort" : "miel",
+	"descriptionLong"  : "",
+	"isNaturalProduct" : true,
+	"logo"             : "miel.jpg",
+	"tags"             : [ "Sucre" ]
+}

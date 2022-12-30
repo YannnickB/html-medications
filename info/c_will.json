@@ -1,0 +1,9 @@
+{
+	"label"            : "C-Will",
+	"descriptionShort" : "Traitement des carences en vitamine C",
+	"descriptionLong"  : "Faire une cure 1x par an",
+	"warning"          : "Si vous réagissez de manière allergique à l'une ou plusieurs des substances contenues dans le produit, vous ne devez plus prendre de C-will.",
+	"ingredients"      : " Par capsule : acide ascorbique 500mg, sphères de sucre, gomme laque, acide tartrique, talc, eau purifiée, ethanol à 96%, jaune de quinoléine, titane dioxyde, gélatine",
+	"logo"             : "c-will-box.png",
+	"tags"             : [ "Vitamine", "C" ]
+}

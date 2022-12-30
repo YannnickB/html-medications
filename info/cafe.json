@@ -1,0 +1,8 @@
+{
+	"label"            : "Café",
+	"descriptionShort" : "Anti-oxydant",
+	"descriptionLong"  : "",
+	"isNaturalProduct" : true,
+	"logo"             : "cafe.jpeg",
+	"tags"             : [ "Anti-oxidant", "Café" ]
+}

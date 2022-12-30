@@ -1,0 +1,13 @@
+{
+	"label"            : "Vinaigre",
+	"descriptionShort" : "",
+	"descriptionLong"  : "",
+	"logo"             : "vinegar.jpg",
+	"posologies"       : [
+		{
+			"label"       : "Piqure moustique",
+			"description" : "Appliquer du vinaigre sur la piqure"
+		}
+	],
+	"tags"             : []
+}

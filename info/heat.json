@@ -1,0 +1,18 @@
+{
+	"label" : "Chaleur",
+	"descriptionShort" : "",
+	"descriptionLong"  : "",
+	"posologies"       : [
+		{
+			"label"       : "Piqure moustique",
+			"description" : "Faire chauffer la piqure (à l'aide d'un briquet ou d'une cigarette). Cela \"fluidifie\" la diffusion de l'anti coagulant et diminue les démangeaisons."
+		},
+		{
+			"label"       : "Courbature",
+			"description" : "Faire chauffer la courbature."
+		}
+	],
+	"isNaturalProduct" : true,
+	"logo"             : "heat.jpg",
+	"tags"             : [ "Chaleur" ]
+}

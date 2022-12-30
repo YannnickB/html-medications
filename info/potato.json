@@ -1,0 +1,10 @@
+{
+	"label"            : "Pomme de terre",
+	"descriptionShort" : "",
+	"descriptionLong"  : "",
+	"benefits"         : "Riche en glucide, en potassium, en magnésium mais aussi en fibres, la pomme de terre est considérée comme un légume complet et participe à un bon équilibre alimentaire associée à un régime varié. Elle contient une quantité impressionnante de vitamines et de minéraux ayant des effets bénéfiques pour la santé.",
+	"isNaturalProduct" : true,
+	"isVegetable"      : true,
+	"logo"             : "potato.jpg",
+	"tags"             : [ "Féculent" ]
+}

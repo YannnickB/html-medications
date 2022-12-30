@@ -1,0 +1,8 @@
+{
+	"label"            : "Clou de girofle",
+	"descriptionShort" : "Le clou de girofle possède des propriétés antibactériennes, anesthésiantes et antiseptiques. Il contient de l'eugénol, un composé aromatique.",
+	"descriptionLong"  : "La saveur du clou de girofle favorise la digestion. Ses composés aromatiques permettent de lutter contre les maux d'estomac (ballonnement, aérophagie, gènes gastriques).<br/>Antalgique : cette action est rapide sur les douleurs dentaires",
+	"isNaturalProduct" : true,
+	"logo"             : "clou_de_girofle.jpg",
+	"tags"             : [ "Antiseptique", "Antifongique", "Antiparasitaire", "Stomachique", "digestion", "Antalgique", "Dents", "Estomac" ]
+}

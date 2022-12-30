@@ -1,0 +1,21 @@
+{
+	"label"            : "Ortie",
+	"descriptionShort" : "Diurétique, dépurative, antirhumatismale, anti-inflammatoire, antalgique, antimicrobienne, anti-ulcéreuse, anti-anémique, hépatoprotectrice, antioxydante, hypoglycémiante, antiallergique, immunostimulante, hypotensive, tonique, galactogène ",
+	"descriptionLong"  : "Une portion de 300 g d'ortie cuite apporte ainsi la ration journalière de protéines",
+	"isNaturalProduct" : true,
+	"logo"             : "urtica.jpg",
+	"photos"           :  [
+		{
+			"url" : "urtica-1.jpg"
+		},
+		{
+			"url" : "urtica-2.jpg"
+		}
+	],
+	"tags"             : [ 
+		"Anti-inflammatoire", "Antimicrobienne", "Antioxydant",
+		"Diurétique", 
+		"Urticant", 
+		"Rein", "Rhumatisme" 
+	]
+}
