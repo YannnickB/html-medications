@@ -63,6 +63,10 @@ function jsonLoaded( json ){
 			itemElement.find(".itemBrandContainer").css( "display", item.brand ? "" : "none");
 			itemElement.find(".itemBrand").html(item.brand);
 			
+			// itemWebsite
+			itemElement.find(".itemWebsiteContainer").css( "display", item.website ? "" : "none");
+			itemElement.find(".itemWebsite").attr("href", item.website ? item.website : "#" );
+			
 			// Descriptions
 			itemElement.find(".itemDescriptionsLayout").css( "display", item.descriptionShort || item.descriptionLong ? "" : "none");
 			itemElement.find(".itemDescShort").html(item.descriptionShort);

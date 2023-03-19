@@ -15,6 +15,7 @@
 		"isVegetable"      : true,
 		"posologies"       : [ LIST OF POSOLOGIES ],
 		"logo"             : "logo url",
+		"website"          : "website url",
 		"photos"           : [ LIST OF PHOTOS ],
 		"tags"             : [ "TAG1", "TAG2", "TAG3" ]
 	}
