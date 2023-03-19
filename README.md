@@ -3,6 +3,7 @@
 
 	{
 		"label"            : "",
+		"brand"            : "Short description",
 		"descriptionShort" : "Short description",
 		"descriptionLong"  : "Long description",
 		"benefits"         : "Benefits",

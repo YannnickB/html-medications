@@ -199,11 +199,16 @@
 	"brand"            : "Voltaren",
 	"descriptionShort" : "Voltaren Emulgel 1% est utilisé pour soulager la douleur et l’inflammation des muscles, tendons et ligaments causées par des entorses, foulures, blessures sportives ou quotidiennes, ainsi qu’en cas de douleurs articulaires, d’arthrose et de rhumatisme.",
 	"descriptionLong"  : "",
-	"logo"             : "https://www.pharma-gdd.com/cache/product_show/gsk-voltarene-emulgel-1-50-g-face.jpg.webp",
+	"benefits"         : "",
+	"ingredients"      : "",
+	"posologie"        : "",
+	"warning"          : "",		
+	"isNaturalProduct" : false,
 	"posologies"       : [
 		{ "label"       : "Douleur musculaire",	        "description" : "Appliquer"	},
 		{ "label"       : "Inflammation musculaire",	"description" : "Appliquer"	}
 	],
+	"logo"             : "https://www.pharma-gdd.com/cache/product_show/gsk-voltarene-emulgel-1-50-g-face.jpg.webp",
 	"tags"             : []
 }
 ,
