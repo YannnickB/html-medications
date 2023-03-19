@@ -51,31 +51,44 @@ function jsonLoaded( json ){
 			
 			var itemElement = $("#item"+key);
 			itemElement.find("a").attr( "href", "info/img/"+ ( item.logo ? item.logo : "default.png") );
-			itemElement.find("img").attr( "src", "info/img/"+ ( item.logo ? item.logo : "default.png") );
+			
+			// Logo
+			var logoUrl = item.logo.startsWith("http") ? item.logo : "info/img/"+ ( item.logo ? item.logo : "default.png");
+			itemElement.find("img").attr( "src", logoUrl );
+			
+			// Label
 			itemElement.find(".itemLabel").html(item.label);
 			
+			// Brand
+			itemElement.find(".itemBrandContainer").css( "display", item.brand ? "" : "none");
+			itemElement.find(".itemBrand").html(item.brand);
 			
+			// Descriptions
 			itemElement.find(".itemDescriptionsLayout").css( "display", item.descriptionShort || item.descriptionLong ? "" : "none");
 			itemElement.find(".itemDescShort").html(item.descriptionShort);
 			itemElement.find(".itemDescLong").html(item.descriptionLong);
 			
+			// Benefits
 			itemElement.find(".itemBenefitsLayout").css( "display", item.benefits ? "" : "none");
 			itemElement.find(".benefits").html(item.benefits);
 			
+			// Nutritional value
 			itemElement.find(".itemNutritionalValueLayout").css( "display", item.nutritional_value ? "" : "none");
 			itemElement.find(".nutritionalValue").html(item.nutritional_value);
 			
-			
+			// Warning
 			itemElement.find(".itemDescWarningLayout").css( "display", item.warning ? "" : "none");
 			itemElement.find(".itemDescWarningValue").html(item.warning ? item.warning : "");
 			
+			// Ingredients
 			itemElement.find(".itemDescIngredientsLayout").css( "display", item.ingredients ? "" : "none");
 			itemElement.find(".itemDescIngredientsValue").html(item.ingredients ? item.ingredients : "");
 			
+			//
 			itemElement.find(".isNaturalProduct").css("display", item.isNaturalProduct ? "" : "none");
 			itemElement.find(".isVegetable").css("display", item.isVegetable ? "" : "none");
 			
-			//
+			// Posologies
 			var itemPosologies = item.posologies;
 			itemElement.find(".itemPosologiesLayout").css( "display", ( itemPosologies && itemPosologies.length > 0 ) ? "" : "none");
 			for ( let key2 in itemPosologies) {
@@ -94,7 +107,7 @@ function jsonLoaded( json ){
 			itemTags = item.tags;
 			for ( let key2 in itemTags) {
 				itemElement.find(".tags").append(
-					$("<span/>").addClass("badge badge-secondary ml-1").html(itemTags[key2])
+					$("<span/>").addClass("badge bg-secondary ml-1").html(itemTags[key2])
 				);
 			}
 			
