@@ -12,6 +12,7 @@
 		"posologie"        : "Posologie",
 		"warning"          : "Warning",		
 		"isNaturalProduct" : true,
+		"isVegetable"      : true,
 		"posologies"       : [ LIST OF POSOLOGIES ],
 		"logo"             : "logo url",
 		"photos"           : [ LIST OF PHOTOS ],
