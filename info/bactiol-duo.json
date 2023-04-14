@@ -1,0 +1,13 @@
+{
+	"label"            : "Bactiol Duo",
+	"descriptionShort" : "Complément alimentaire à base de probiotiques, de levure, d'extrait de mûre et de vitamine D, sous forme de gélules. Pour favoriser le transit intestinal normal et la résistance naturelle.",
+	"descriptionLong"  : "",
+	"logo"             : "bactiol-duo.jpg",
+	"posologies"       : [
+		{
+			"label"       : "",
+			"description" : ""
+		}
+	],
+	"tags"             : [ "transit", "intestinal" ]
+}

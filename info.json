@@ -1,4 +1,26 @@
-[
+[  
+{
+	"label"            : "Arnigel",
+	"descriptionShort" : "",
+	"descriptionLong"  : "",
+	"logo"             : "arnigel.jpg",
+	"tags"             : [ "Echymoses", "Contusions", "Fatigure musculaire" ]
+}
+,  
+{
+	"label"            : "Bactiol Duo",
+	"descriptionShort" : "Complément alimentaire à base de probiotiques, de levure, d'extrait de mûre et de vitamine D, sous forme de gélules. Pour favoriser le transit intestinal normal et la résistance naturelle.",
+	"descriptionLong"  : "",
+	"logo"             : "bactiol-duo.jpg",
+	"posologies"       : [
+		{
+			"label"       : "",
+			"description" : ""
+		}
+	],
+	"tags"             : [ "transit", "intestinal" ]
+}
+,  
 {
 	"label"            : "Banane",
 	"descriptionShort" : "",
@@ -11,9 +33,47 @@
 			"description" : "Appliquer la face intérieure de la pellure sur la piqure"
 		}
 	],
-	"tags"             : [ "Vitamine" ]
+	"tags"             : []
 }
-,
+,  
+{
+	"label"            : "Haricot blanc",
+	"benefits"         : "Facile à digérer. Riche en protéines et en glucides. Faible en calories.",
+	"nutritional_value": "Le haricot blanc est une légumineuse qui se caractérise par des teneurs élevées en protéines et glucides complexes mais aussi en fibres, vitamines, minéraux. Ils se consomment frais ou secs mais toujours cuits.<br/><br/>Le haricot blanc contient des proportions importantes de protéines et de glucides. Ces derniers sont essentiellement composés de glucides complexes, à l’inverse des légumes frais, qui renferment une majorité de sucres simples.<br/><br/>Il constitue une bonne source de vitamines C,B1, B3 et B9 ; et fournit une quantité intéressante de fer, de potassium, de calcium et de magnésium, zinc, manganèse.<br/><br/>Ses fibres atteignent plus de 5 grammes aux 100 grammes, tandis que la moyenne des légumes frais se situe entre 2 et 3 grammes pour 100 grammes. Elles sont composées de celluloses, d’hémicelluloses et de pectines.",
+	"isNaturalProduct" : true,
+	"isVegetable"      : true,
+	"logo"             : "bean_white.webp",
+	"tags"             : [ "Digestion" ]
+}
+,  
+{
+	"label"            : "Chou cabus (Chou blanc)",
+	"descriptionShort" : "",
+	"descriptionLong"  : "",
+	"isNaturalProduct" : true,
+	"isVegetable"      : true,
+	"logo"             : "cabbage.webp",
+	"tags"             : []
+}
+,  
+{
+	"label"            : "Café",
+	"descriptionShort" : "Anti-oxydant",
+	"descriptionLong"  : "",
+	"isNaturalProduct" : true,
+	"logo"             : "cafe.jpeg",
+	"tags"             : [ "Anti-oxidant", "Café" ]
+}
+,  
+{
+	"label"            : "Clou de girofle",
+	"descriptionShort" : "Le clou de girofle possède des propriétés antibactériennes, anesthésiantes et antiseptiques. Il contient de l'eugénol, un composé aromatique.",
+	"descriptionLong"  : "La saveur du clou de girofle favorise la digestion. Ses composés aromatiques permettent de lutter contre les maux d'estomac (ballonnement, aérophagie, gènes gastriques).<br/>Antalgique : cette action est rapide sur les douleurs dentaires",
+	"isNaturalProduct" : true,
+	"logo"             : "clou_de_girofle.jpg",
+	"tags"             : [ "Antiseptique", "Antifongique", "Antiparasitaire", "Stomachique", "digestion", "Antalgique", "Dents", "Estomac" ]
+}
+,  
 {
 	"label"            : "C-Will",
 	"descriptionShort" : "Traitement des carences en vitamine C",
@@ -23,18 +83,17 @@
 	"logo"             : "c-will-box.png",
 	"tags"             : [ "Vitamine", "C" ]
 }
-,
+,  
 {
-	"label"            : "Café",
-	"descriptionShort" : "Anti-oxydant",
+	"label" : "Dafalgan",
+	"descriptionShort" : "",
 	"descriptionLong"  : "",
-	"isNaturalProduct" : true,
-	"logo"             : "cafe.jpeg",
-	"tags"             : [ "Anti-oxidant", "Café" ]
+	"logo"             : "dafalgan.jpeg",
+	"tags"             : [ "Mal", "Maux", "Tête" ]
 }
-,
+,  
 {
-	"label"            : "Chaleur",
+	"label" : "Chaleur",
 	"descriptionShort" : "",
 	"descriptionLong"  : "",
 	"posologies"       : [
@@ -51,44 +110,7 @@
 	"logo"             : "heat.jpg",
 	"tags"             : [ "Chaleur" ]
 }
-,
-{
-	"label"            : "Chou cabus (Chou blanc)",
-	"descriptionShort" : "",
-	"descriptionLong"  : "",
-	"isNaturalProduct" : true,
-	"isVegetable"      : true,
-	"logo"             : "cabbage.webp",
-	"tags"             : []
-}
-,
-{
-	"label"            : "Clou de girofle",
-	"descriptionShort" : "Le clou de girofle possède des propriétés antibactériennes, anesthésiantes et antiseptiques. Il contient de l'eugénol, un composé aromatique.",
-	"descriptionLong"  : "La saveur du clou de girofle favorise la digestion. Ses composés aromatiques permettent de lutter contre les maux d'estomac (ballonnement, aérophagie, gènes gastriques).<br/>Antalgique : cette action est rapide sur les douleurs dentaires",
-	"isNaturalProduct" : true,
-	"logo"             : "clou_de_girofle.jpg",
-	"tags"             : [ "Antiseptique", "Antifongique", "Antiparasitaire", "Stomachique", "digestion", "Antalgique", "Dents", "Estomac" ]
-}
-,
-{
-	"label"            : "Dafalgan",
-	"descriptionShort" : "",
-	"descriptionLong"  : "",
-	"logo"             : "dafalgan.jpeg",
-	"tags"             : [ "Mal", "Maux", "Tête" ]
-}
-,
-{
-	"label"            : "Haricot blanc",
-	"benefits"         : "Facile à digérer. Riche en protéines et en glucides. Faible en calories.",
-	"nutritional_value": "Le haricot blanc est une légumineuse qui se caractérise par des teneurs élevées en protéines et glucides complexes mais aussi en fibres, vitamines, minéraux. Ils se consomment frais ou secs mais toujours cuits.<br/><br/>Le haricot blanc contient des proportions importantes de protéines et de glucides. Ces derniers sont essentiellement composés de glucides complexes, à l’inverse des légumes frais, qui renferment une majorité de sucres simples.<br/><br/>Il constitue une bonne source de vitamines C,B1, B3 et B9 ; et fournit une quantité intéressante de fer, de potassium, de calcium et de magnésium, zinc, manganèse.<br/><br/>Ses fibres atteignent plus de 5 grammes aux 100 grammes, tandis que la moyenne des légumes frais se situe entre 2 et 3 grammes pour 100 grammes. Elles sont composées de celluloses, d’hémicelluloses et de pectines.",
-	"isNaturalProduct" : true,
-	"isVegetable"      : true,
-	"logo"             : "bean_white.webp",
-	"tags"             : [ "Digestion" ]
-}
-,
+,  
 {
 	"label"            : "Mélisse",
 	"descriptionShort" : "Troubles nerveux et digestifs, Herpès labial, Insomnie, nervosité, agitation, Blessures mineures, névralgies",
@@ -97,17 +119,7 @@
 	"logo"             : "melisse.jpg",
 	"tags"             : [ "Relaxant", "Ventre" ]
 }
-,
-{
-	"label"            : "Menthe poivrée (Pranarom)",
-	"brand"            : "Pranarom",
-	"descriptionShort" : "Respiration - Digestion Et Santé Intestinale - Hygiène Buccale - Énergie Et Vitalité - Estomac",
-	"descriptionLong"  : "",
-	"ingredients"      : "Menthe poivrée",
-	"logo"             : "pranarom-menthe-poivree.webp",
-	"tags"             : [ "Menthe poivrée", "Menthe", "Poivre", "Huile", "Ventre" ]
-}
-,
+,  
 {
 	"label"            : "Miel",
 	"descriptionShort" : "miel",
@@ -116,7 +128,7 @@
 	"logo"             : "miel.jpg",
 	"tags"             : [ "Sucre" ]
 }
-,
+,  
 {
 	"label"            : "Oignon",
 	"descriptionShort" : "",
@@ -126,7 +138,38 @@
 	"logo"             : "onion.jpg",
 	"tags"             : []
 }
-,
+,  
+{
+	"label"            : "Pomme de terre",
+	"descriptionShort" : "",
+	"descriptionLong"  : "",
+	"benefits"         : "Riche en glucide, en potassium, en magnésium mais aussi en fibres, la pomme de terre est considérée comme un légume complet et participe à un bon équilibre alimentaire associée à un régime varié. Elle contient une quantité impressionnante de vitamines et de minéraux ayant des effets bénéfiques pour la santé.",
+	"isNaturalProduct" : true,
+	"isVegetable"      : true,
+	"logo"             : "potato.jpg",
+	"tags"             : [ "Féculent" ]
+}
+,  
+{
+	"label" : "Pranarom - Menthe poivrée",
+	"descriptionShort" : "Respiration - Digestion Et Santé Intestinale - Hygiène Buccale - Énergie Et Vitalité - Estomac",
+	"descriptionLong"  : "",
+	"ingredients"      : "Menthe poivrée",
+	"logo"             : "pranarom-menthe-poivree.webp",
+	"tags"             : [ "Menthe poivrée", "Menthe", "Poivre", "Huile", "Ventre" ]
+}
+,  
+{
+	"label"            : "Pranarom - Ravintsara",
+	"descriptionShort" : "Respiration - Défenses Naturelles - Assainissant - Diffusion Atmosphérique - Équilibre Émotionnel ",
+	"descriptionLong"  : "",
+	"ingredients"      : "Cinnamomum camphora ct cinéole.<hr/>Composition: Sabinène, 1,8 cinéole, α-terpinéol",
+	"posologie"        : "Ingérer 2 gouttes sur un support neutre 3 fois par jour. Dose journalière maximum recommandée pour l’huile : 6 gouttes - 230 mg.",
+	"warning"          : "Demander conseil à un professionnel de la santé • Tenir hors de portée des jeunes enfants. • Ne se substitue pas à une alimentation variée et équilibrée et à un mode de vie sain. • Ne pas dépasser la dose conseillée.• Ne pas utiliser plus de 14 jours. • Ne pas utiliser pendant la grossesse et l’allaitement et chez l’enfant de moins de 6 ans. • Conserver à l’abri de toute source de chaleur et de la lumière.",
+	"logo"             : "pranarom-ravintsara.webp",
+	"tags"             : [ "Ravintsara", "Huile" ]
+}
+,  
 {
 	"label"            : "Ortie",
 	"descriptionShort" : "Diurétique, dépurative, antirhumatismale, anti-inflammatoire, antalgique, antimicrobienne, anti-ulcéreuse, anti-anémique, hépatoprotectrice, antioxydante, hypoglycémiante, antiallergique, immunostimulante, hypotensive, tonique, galactogène ",
@@ -148,38 +191,7 @@
 		"Rein", "Rhumatisme" 
 	]
 }
-,
-{
-	"label"            : "Pomme de terre",
-	"descriptionShort" : "",
-	"descriptionLong"  : "",
-	"benefits"         : "Riche en glucide, en potassium, en magnésium mais aussi en fibres, la pomme de terre est considérée comme un légume complet et participe à un bon équilibre alimentaire associée à un régime varié. Elle contient une quantité impressionnante de vitamines et de minéraux ayant des effets bénéfiques pour la santé.",
-	"isNaturalProduct" : true,
-	"isVegetable"      : true,
-	"logo"             : "potato.jpg",
-	"tags"             : [ "Féculent" ]
-}
-,
-{
-	"label"            : "Ravintsara (Pranarom)",
-	"brand"            : "Pranarom",
-	"descriptionShort" : "Respiration - Défenses Naturelles - Assainissant - Diffusion Atmosphérique - Équilibre Émotionnel ",
-	"descriptionLong"  : "",
-	"ingredients"      : "Cinnamomum camphora ct cinéole.<hr/>Composition: Sabinène, 1,8 cinéole, α-terpinéol",
-	"posologie"        : "Ingérer 2 gouttes sur un support neutre 3 fois par jour. Dose journalière maximum recommandée pour l’huile : 6 gouttes - 230 mg.",
-	"warning"          : "Demander conseil à un professionnel de la santé • Tenir hors de portée des jeunes enfants. • Ne se substitue pas à une alimentation variée et équilibrée et à un mode de vie sain. • Ne pas dépasser la dose conseillée.• Ne pas utiliser plus de 14 jours. • Ne pas utiliser pendant la grossesse et l’allaitement et chez l’enfant de moins de 6 ans. • Conserver à l’abri de toute source de chaleur et de la lumière.",
-	"logo"             : "pranarom-ravintsara.webp",
-	"tags"             : [ "Ravintsara", "Huile" ]
-}
-,
-{
-	"label"            : "Vin rouge",
-	"descriptionShort" : "Anti-oxydant",
-	"descriptionLong"  : "",
-	"logo"             : "vin-rouge.jpg",
-	"tags"             : [ "Anti-oxidant", "Vin", "Raisin" ]
-}
-,
+,  
 {
 	"label"            : "Vinaigre",
 	"descriptionShort" : "",
@@ -193,25 +205,14 @@
 	],
 	"tags"             : []
 }
-,
+,  
 {
-	"label"            : "Voltaren Emulgel 1%",
-	"brand"            : "Voltaren",
-	"descriptionShort" : "Voltaren Emulgel 1% est utilisé pour soulager la douleur et l’inflammation des muscles, tendons et ligaments causées par des entorses, foulures, blessures sportives ou quotidiennes, ainsi qu’en cas de douleurs articulaires, d’arthrose et de rhumatisme.",
+	"label"            : "Vin rouge",
+	"descriptionShort" : "Anti-oxydant",
 	"descriptionLong"  : "",
-	"benefits"         : "",
-	"ingredients"      : "",
-	"posologie"        : "",
-	"warning"          : "",		
-	"isNaturalProduct" : false,
-	"posologies"       : [
-		{ "label"       : "Douleur musculaire",	        "description" : "Appliquer"	},
-		{ "label"       : "Inflammation musculaire",	"description" : "Appliquer"	}
-	],
-	"logo"             : "https://www.pharma-gdd.com/cache/product_show/gsk-voltarene-emulgel-1-50-g-face.jpg.webp",
-	"website"          : "https://www.voltaren.be/fr/voltaren-emulgel.html",
-	"tags"             : []
+	"logo"             : "vin-rouge.jpg",
+	"tags"             : [ "Anti-oxidant", "Vin", "Raisin" ]
 }
-,
-{}
-]
+,  
+{}  
+]  
