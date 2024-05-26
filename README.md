@@ -1,5 +1,5 @@
 
-##Item Syntax
+## Item Syntax
 
 	{
 		"label"            : "",
@@ -21,14 +21,14 @@
 	}
 
 
-##Item Photo Syntax
+## Item Photo Syntax
 
 	{
 		"url"            : ""
 	}
 
 
-##Item Posologies Syntax
+## Item Posologies Syntax
 
 	{
 		"label"            : "Label",
