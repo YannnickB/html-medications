@@ -1,7 +1,7 @@
 var jsonList = null;
 $(document).ready(function () {
 	// Load JSON file
-	$.getJSON("info.json", function(json) { jsonLoaded(json); });
+	$.getJSON("info.json?time="+Date.now(), function(json) { jsonLoaded(json); });
 	
 	//
 	$("#searchTextInput").on('input',function(e){
