@@ -112,6 +112,15 @@
 }
 ,  
 {
+	"label"            : "Lysomucil",
+	"descriptionShort" : "Affections aiguës des voies respiratoires. Toux grasse.",
+	"descriptionLong"  : "Prenez ce médicament le matin pour fluidifier et éliminer les glaires pendant la journée. Si vous le prenez le soir, vous risquez de tousser la nuit à cause des glaires qui deviennent plus fluides. Buvez beaucoup d'eau pour fluidifier les glaires.",
+	"isNaturalProduct" : false,
+	"logo"             : "lysomucil-600.jpg",
+	"tags"             : [ "Toux", "Grasse" ]
+}
+,  
+{
 	"label"            : "Mélisse",
 	"descriptionShort" : "Troubles nerveux et digestifs, Herpès labial, Insomnie, nervosité, agitation, Blessures mineures, névralgies",
 	"descriptionLong"  : "",
