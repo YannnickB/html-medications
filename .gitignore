@@ -7,6 +7,7 @@ node_modules
 
 # Composer
 vendor
+composer.lock
 
 # Smarty cache
 secure/caches/smarty/templates_c
