@@ -33,6 +33,12 @@ if ( isset($_POST["action"] ) ){
 			$userAlerts[] =  [ "title" => "", "message" => "Medication deleted", "type" => "success" ];
 		else $userAlerts[] =  [ "title" => "", "message" => "Medication not deleted", "type" => "error" ];
     }
+	else if ( $_POST["action"] == "deleteTag" ){
+		$tagsObject = new Tags($pdo, $_POST["TagId"] );
+		$result = $tagsObject->delete();
+		if ( $result[1] == 0) $userAlerts[] =  [ "title" => "", "message" => "Tag deleted", "type" => "success" ];
+		else $userAlerts[] =  [ "title" => "", "message" => "Tag not deleted", "type" => "error" ];
+    }
 }
 
 
@@ -43,10 +49,10 @@ if (file_exists( $sqlitePath)) {
 }
 else{
 	$userAlerts[] =  [ "title" => "Create database", "message" => $sqlitePath, "type" => "success" ];
-	$pdo = new PDO( "sqlite:".$sqlitePath );
-	$result = createTables( $pdo, $config["securePath"] );
+	$pdo = new PDO( "sqlite:$sqlitePath" );
+	$result = createTables( $pdo, $config["securePath"]."/install/tables" );
 	//echo __FILE__." line ".__LINE__. "() result=".json_encode($result, JSON_PRETTY_PRINT )."<br>";
-	if ( $result[1] === 0 ) {
+	if ( $result[0] === 0 ) {
 		$userAlerts[] =  [ "title" => "", "message" => "Tables created", "type" => "success" ];
 	}
 	else {
@@ -58,27 +64,15 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
 
 // Medications
-try{
-    $medicationsObject = new Medications($pdo);
-    $medications = $medicationsObject->fetchAll();
-	//echo __FILE__. " medications=<pre>" . json_encode($medications, JSON_PRETTY_PRINT) . "</pre><br/>";
-    $smarty->assign( "medications", $medications );
-}
-catch( Exception $e){
-    echo "e=$e<br>";
-}
+$medicationsObject = new Medications($pdo);
+$medications = $medicationsObject->fetchAll();
+//echo __FILE__. " medications=<pre>" . json_encode($medications, JSON_PRETTY_PRINT) . "</pre><br/>";
+$smarty->assign( "medications", $medications );
 
 
 // Tags
-try{
-    $tagsObject = new Tags($pdo);
-    $tags = $tagsObject->fetchAll();
-	//echo __FILE__. " tags=<pre>" . json_encode($tags, JSON_PRETTY_PRINT) . "</pre><br/>";
-    $smarty->assign( "tags", $tags );
-}
-catch( Exception $e){
-    echo "e=$e<br>";
-}
+$smarty->assign(  "tags", (new Tags($pdo))->fetchAll() );
+
 
 //
 include dirname(__DIR__) . "/header.php";
@@ -87,34 +81,34 @@ include dirname(__DIR__) . "/header.php";
 echo $smarty->fetch( $config["securePath"] . "/tpl/admin/pageIndex.tpl" );
 
 
-function createTables( $pdo, $securePath ) {
-	$result = $pdo->exec( file_get_contents( $securePath . "/install/tables.sql" ) );
-	echo __FILE__. " result=<pre>" . json_encode($result, JSON_PRETTY_PRINT) . "</pre><br/>";
+/**
+ * Create tables
+ * @param mixed $pdo
+ * @param mixed $securePath
+ * @return array<int|string>
+ */
+function createTables( $pdo, $tablesInstallPath ) : array {
 
-	$installPath = $securePath . "/install";
+	// Get tables list
+	$tables = json_decode( file_get_contents("$tablesInstallPath/tables.json" ) );
 
-	//
-	if ( $result ) {
-		$tablesJsonListPath = $installPath . "/tables.json";
-		$tables = json_decode( file_get_contents($tablesJsonListPath ) );
-		echo __FILE__. " tables=<pre>" . json_encode($tables, JSON_PRETTY_PRINT) . "</pre><br/>";
-		
-		if ( $tables ) {
-			
-			// Save in global config
-			foreach ( $tables as $key => $table){
-				$sqlFilePath = $installPath . "/" . $key.".sql";
-				//echo __FILE__. " key=$key, sqlFilePath=$sqlFilePath, table=<pre>" . json_encode($table, JSON_PRETTY_PRINT) . "</pre><br/>";
+	// Check tables list is OK
+	if ( !$tables ) return [1,"ERROR tables list from '$tablesInstallPath/tables.json' file is not valid" ];
 
-				$result = $pdo->exec( file_get_contents( $sqlFilePath ) );
-				echo __FILE__. " result=<pre>" . json_encode($result, JSON_PRETTY_PRINT) . "</pre><br/>";
+	// For each tables
+	foreach ( $tables as $key => $table){
 
-				if ( !$result) return [1,1,"ERROR installing table $key," . json_encode($pdo->errorInfo()[2] ) ];
-			}
-			return [0,0,null];
-		}
+		$sqlFilePath = "$tablesInstallPath/$key.sql";
+
+		// Check SQL file exists
+		if ( !is_file($sqlFilePath ) ) return [1,"ERROR file '$sqlFilePath' not exists for table $key," . json_encode($pdo->errorInfo()[2] ) ];
+
+		//
+		$result = $pdo->exec( file_get_contents( $sqlFilePath ) );
+
+		// Return if error
+		if ( !$result) return [1,"ERROR installing table $key," . json_encode($pdo->errorInfo()[2] ) ];
 	}
-	
-	return $pdo->errorInfo();
+	return [0,null];
 }
 
