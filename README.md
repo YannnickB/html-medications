@@ -1,5 +1,10 @@
+# Medications
 
-## Item Syntax
+## HTML/JSON
+
+In `info.json`
+
+### Item Syntax
 
 	{
 		"label"            : "",
@@ -21,16 +26,43 @@
 	}
 
 
-## Item Photo Syntax
+### Item Photo Syntax
 
 	{
 		"url"            : ""
 	}
 
 
-## Item Posologies Syntax
+### Item Posologies Syntax
 
 	{
 		"label"            : "Label",
 		"description"      : "Description"
 	}
+
+
+## PHP
+
+### Installation
+
+#### Composer packages
+
+Run 
+
+```
+composer install
+```
+
+
+#### Node packages
+
+Run 
+
+```
+npm i
+```
+
+#### config.php
+
+Copy the `configTemplate.php` to `config.php` and change values
+
