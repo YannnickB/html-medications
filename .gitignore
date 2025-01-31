@@ -1,2 +1,8 @@
 # Node
 node_modules
+
+# Composer
+vendor
+
+# Smarty cache
+secure/caches/smarty/templates_c
