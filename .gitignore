@@ -1,5 +1,6 @@
 #
 config.php
+secure/config/configDatabase.php
 
 # Node
 node_modules
