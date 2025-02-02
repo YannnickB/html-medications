@@ -17,6 +17,10 @@
 	
 			<div style="display: flex; gap: 1em; align-items: center; justify-content: end;">
 				<form method="post" class="m-0 text-end">
+					<div><input type="hidden" name="action" value="backupDatabase"></input></div>
+					<div><button type="submit" class="btn btn-sm btn-success">Backup database</button></div>
+				</form>
+				<form method="post" class="m-0 text-end">
 					<div><input type="hidden" name="action" value="deleteDatabase"></input></div>
 					<div><button type="submit" class="btn btn-sm btn-danger">Delete database</button></div>
 				</form>
