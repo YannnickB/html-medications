@@ -23,3 +23,5 @@ INSERT INTO Tags ( TagId, TagLabel ) VALUES ( 12, 'Stomachique' );
 INSERT INTO Tags ( TagId, TagLabel ) VALUES ( 13, 'Antalgique' );
 INSERT INTO Tags ( TagId, TagLabel ) VALUES ( 14, 'Dents' );
 INSERT INTO Tags ( TagId, TagLabel ) VALUES ( 15, 'Estomac' );
+INSERT INTO Tags ( TagId, TagLabel ) VALUES ( 16, 'Vitamine' );
+INSERT INTO Tags ( TagId, TagLabel ) VALUES ( 17, 'C' );

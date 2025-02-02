@@ -22,3 +22,5 @@ INSERT INTO MedicationsTags ( MedicationTag_MedicationId, MedicationTag_TagId ) 
 INSERT INTO MedicationsTags ( MedicationTag_MedicationId, MedicationTag_TagId ) VALUES ( 7, 13 );
 INSERT INTO MedicationsTags ( MedicationTag_MedicationId, MedicationTag_TagId ) VALUES ( 7, 14 );
 INSERT INTO MedicationsTags ( MedicationTag_MedicationId, MedicationTag_TagId ) VALUES ( 7, 15 );
+INSERT INTO MedicationsTags ( MedicationTag_MedicationId, MedicationTag_TagId ) VALUES ( 8, 16 );
+INSERT INTO MedicationsTags ( MedicationTag_MedicationId, MedicationTag_TagId ) VALUES ( 8, 17 );
