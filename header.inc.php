@@ -2,38 +2,33 @@
 
 /** */
 function headerGenerateHeadLayout( $page, $lang ){
-	global $privateConfig, $config, $cmsPage, $siteMap, $smarty, $globalSmarty, $layouts, $locales;
+	global $privateConfig, $config, $cmsPage, $siteMap, $smarty, $layouts, $locales;
 	//echo "headerGenerateHeadLayout() $lang<br/>";
 	//echo "headerGenerateHeadLayout() privateConfig: <pre>"; print_r($privateConfig); echo "</pre>";
 	//echo "<br><br><br><br><br>" . __FILE__ . " headerGenerateHeadLayout() layouts: <pre>" . json_encode($layouts, JSON_PRETTY_PRINT) . "</pre><br/>";
 	//echo "headerGenerateHeadLayout() cmsPage: <pre>"; print_r($cmsPage); echo "</pre>";
 
 	// Reload config in smarty
-	//$smarty->assign('config', $config );
-	//$smarty->assign('locales', $locales );
+	$smarty->assign('config', $config );
+	$smarty->assign('locales', $locales );
 	//$smarty->assign('cmsPage', $cmsPage );
 	
 	// Fetch template
 	//$layouts["head"] = $smarty->fetch( $privateConfig["templatesPath"] . "/head.tpl" );
 	
 	//
-	$globalSmarty->assign('config', $config );
-	$globalSmarty->assign('locales', $locales );
-	$globalSmarty->assign('cmsPage', $cmsPage );
-	$layouts["head"] = $globalSmarty->fetch( "head.tpl" );
-	
-	$globalSmarty->assign('layouts', $layouts );
+	$layouts["head"] = $smarty->fetch( $config["templatesPath"] . "/head.tpl" );
 }
 
 
 /** */
 function headerGenerateFootLayout(){
-	global $config, $smarty, $globalSmarty, $layouts, $userAlerts;
+	global $config, $smarty, $layouts, $userAlerts;
 	$smarty->assign( "userAlerts", $userAlerts );
-	$layouts["foot"] = $smarty->fetch( $config["securePath"] . "/tpl/foot.tpl" );
+	$layouts["foot"] = $smarty->fetch( $config["templatesPath"] . "/foot.tpl" );
+	
 	$smarty->assign('layouts', $layouts );
-	$globalSmarty->assign('layouts', $layouts );
-	$globalSmarty->assign('userAlerts', $userAlerts );
+	$smarty->assign('userAlerts', $userAlerts );
 }
 
 
@@ -46,17 +41,15 @@ function headerGenerateFootLayout(){
 
 /** */
 function headerGenerateAdminHeaderLayout(){
-	global $config, $siteMap, $smarty, $globalSmarty, $layouts, $locales;
+	global $config, $smarty, $layouts, $locales;
 	//echo "headerGenerateAdminHeaderLayout()<br/>";
 	
 	// Fetch template
 	$layouts["adminHeader"] = $smarty->fetch( $config["templatesPath"] . "/adminHeader.html" );
 	
 	//
-	//$layouts["adminHeader"] = $globalSmarty->fetch( "adminHeader.html" );
-
-	//
 	$smarty->assign('layouts', $layouts );
+	$smarty->assign('locales', $locales );
 }
 
 
@@ -64,7 +57,7 @@ function headerGenerateAdminHeaderLayout(){
 
 /** */
 function headerGenerateHeaderLayout( $page, $lang ){
-	global $privateConfig, $config, $siteMap, $smarty, $globalSmarty, $layouts, $locales, $globalUser, $globalMenus, $globalLanguages;
+	global $privateConfig, $config, $siteMap, $smarty, $layouts, $locales, $globalUser, $globalMenus, $globalLanguages;
 	//echo "headerGenerateHeaderLayout() $lang<br/>";
 	//echo "headerGenerateHeaderLayout() <pre>"; print_r($config); echo "</pre>";
 	//echo __FILE__ . __LINE__ . " headerGenerateHeaderLayout() globalUser: <pre>"; print_r($globalUser); echo "</pre>";
@@ -77,7 +70,7 @@ function headerGenerateHeaderLayout( $page, $lang ){
 
 	// Reload config in smarty
 	//$smarty->assign('privateConfig', $privateConfig );
-	//$smarty->assign('config', $config );
+	$smarty->assign('config', $config );
 	//$smarty->assign('globalUser', $globalUser );
 	//$smarty->assign('languages', $config["languages"] );
 	//$smarty->assign('globalMenus', $globalMenus );
@@ -87,12 +80,7 @@ function headerGenerateHeaderLayout( $page, $lang ){
 	//$layouts["header"] = $smarty->fetch( $privateConfig["templatesPath"] . "/header.tpl" );
 	
 	//
-	$globalSmarty->assign('privateConfig', $privateConfig );
-	$globalSmarty->assign('config', $config );
-	$globalSmarty->assign('globalUser', $globalUser );
-	$globalSmarty->assign('languages', $globalLanguages );
-	$globalSmarty->assign('globalMenus', $globalMenus );
-	$layouts["header"] = $globalSmarty->fetch( "header.tpl" );
+	$layouts["header"] = $smarty->fetch( $config["templatesPath"] . "/header.tpl" );
 
 	//
 	//echo $layouts["header"];

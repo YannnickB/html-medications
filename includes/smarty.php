@@ -16,9 +16,6 @@ $smarty->assign('config', $config );
 $smarty->assign('locales', $locales );
 
 
-global $globalSmarty;
-$globalSmarty = new globalSmarty( $config["rootPath"], $config["securePath"] . "/tpl", $config["securePath"] . "/caches/smarty", $config["rootPath"] . "/themes", "default" );
-
 
 /** */
 function initSmarty(){
