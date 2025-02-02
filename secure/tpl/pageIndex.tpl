@@ -9,6 +9,7 @@
 	
 	<div class="container">
 
+		<!-- PAGE HEADE -->
 		<div class="py-3" style="display: flex; gap: 0em; align-items: center;">
 			<div style="flex: 1; display: flex; gap: 0em; align-items: center;">
 				<h1><{$locales.app_name}></h1>
@@ -19,42 +20,28 @@
 			</div>
 		</div>
 
-		<!-- LIST -->
-		<div id="list" class="pb-3" fill-items-template="listWithTemplateRowTemplate">
-			<table border="1">
-				<thead style="text-align: left;"></thead>
-				<tbody></tbody>
-				<tfoot style="text-align: left;"></tfoot>
-			</table>
-		</div>
-
-	</div>
-
-	<!-- TEMPLATES -->
-	<div style="display: none">
-		<!-- ITEM TEMPLATE -->
-		<div id="listWithTemplateRowTemplate" class="border d-block text-decoration-none">
-			<div class="px-2" style="display: flex; gap: 1em;">
-
-				<div style="flex: 1;">
-					<div style="display: flex; gap: 0.5em;">
-						<b class="MedicationLabel"></b>
-						<span class="MedicationIsNaturalProduct_on text-success"><span class="fa fa-leaf" title="Natural product"></span></span>
-						<span class="MedicationIsVegetable_on text-warning"><span class="fa fa-carrot" title="Vegetable"></span></span>
-					</div>
-					<p class="MedicationDescriptionShort"></p>
+		<!-- FILTERS FORM -->
+		<!--pre><{json_encode($filters)}></pre-->
+		<form>
+			<div class="row">
+				<div class="col-auto d-flex gap-2 align-items-center">
+					<span>Text:</span> <input type="text" name="q" class="form-control" value="<{if isset($filters.q)}><{$filters.q}><{/if}>"></input>
 				</div>
-
-
-				<div>
-					<img class="LogoUrl my-2" fill-type="backgroundImage" style="height: 3em;"></img>
+				<div class="col-auto d-flex gap-2 align-items-center">
+					<span class="text-nowrap">Natural product:</span> 
+					<select type="text" name="MedicationIsNaturalProduct" class="form-control">
+						<option value="">----</option>
+						<option value="1" <{if isset(  $filters.MedicationIsNaturalProduct ) && $filters.MedicationIsNaturalProduct==1}>selected="selected"<{/if}>>Yes</option>
+						<option value="0" <{if isset(  $filters.MedicationIsNaturalProduct ) && $filters.MedicationIsNaturalProduct===0}>selected="selected"<{/if}>>No</option>
+					</select>
 				</div>
-
-				<!--div style="display: flex;">
-					<div class="clickable" fill-key="MedicationId" fill-click-action="view" title="View">View</div>
-				</div-->
+				<div class="col-auto">
+					<button type="submit" class="btn btn-primary">Filter</button>
+				</div>
 			</div>
-		</div>
+		</form>
+
+		<{include file=$config.securePath|cat:"/tpl/pageIndex_Medications.tpl" data=$medications}>
 
 	</div>
 	
@@ -64,9 +51,7 @@
 
 	  
 	<script src="<{$config.rootUrl}>/public/js/pageIndex.js"></script>
-
-
-
+s
 </body>
 
 </html>
