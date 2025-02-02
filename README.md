@@ -7,8 +7,8 @@ In `info.json`
 ### Item Syntax
 
 	{
-		"label"            : "",
-		"brand"            : "Short description",
+		"label"            : "Medication label",
+		"brand"            : "Brand name",
 		"descriptionShort" : "Short description",
 		"descriptionLong"  : "Long description",
 		"benefits"         : "Benefits",
