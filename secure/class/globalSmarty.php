@@ -49,8 +49,8 @@ class globalSmarty{
 			
 			//echo "initSmarty() securePath: " . $privateConfig["securePath"] . "<br/>";
 			$this->smarty->setCompileDir( $this->cacheFolder . "/templates_c" );
-			$this->smarty->setCacheDir(   $this->cacheFolder . "/cache"       );
-			$this->smarty->setConfigDir(  $this->cacheFolder . "/configs"     );
+			$this->smarty->setCacheDir(     $this->cacheFolder . "/cache"       );
+			$this->smarty->setConfigDir(   $this->cacheFolder . "/configs"     );
 	
 			$this->smarty->setLeftDelimiter("<{");
 			$this->smarty->setRightDelimiter("}>");

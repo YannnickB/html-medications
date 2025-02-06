@@ -1,41 +1,40 @@
 <?php
 
-//echo "<br/><br/><br/><br/><br/><br/>" . __FILE__ . __LINE__ . " <span>Includes Smarty</span>";
-//echo "<br/><br/><br/><br/><br/><br/>" . __FILE__ . __LINE__ . " config=<pre>"; print_r( $config ); echo "</pre><br/>";
-
-$config["templatesPath"] = $config["securePath"] . "/tpl";
-
-//require_once $config["rootPath"] . '/vendor/smarty/smarty/src/Smarty.php';
-require $config["securePath"] . "/class/globalSmarty.php";
+// Set templates path
 
 
 // INIT SMARTY
 global $smarty;
-$smarty = initSmarty();
+$smarty = initSmarty( $config["securePath"] );
+
+// Assign config
 $smarty->assign('config', $config );
+// Assign locales
 $smarty->assign('locales', $locales );
+// Assign locales
+$smarty->assign('languages', $globalLanguages );
 
 
 
 /** */
-function initSmarty(){
-	global $config;
-	//echo "initSmarty<br/>";
-	if ( isset( $config["securePath"] ) ){
-		
-		$smarty = new Smarty\Smarty();	
+function initSmarty( $securePath ){
 
-		$smarty->setTemplateDir('');
-		
-		//echo "initSmarty() securePath: " . $config["securePath"] . "<br/>";
-		$smarty->setCompileDir( $config["securePath"] . "/caches/smarty/templates_c" );
-		$smarty->setCacheDir(   $config["securePath"] . "/caches/smarty/cache"       );
-		$smarty->setConfigDir(  $config["securePath"] . "/caches/smarty/configs"     );
+	if ( !$securePath ) return null;
+
+	// Init smarty
+	$smarty = new Smarty\Smarty();	
+
+	//
+	$smarty->setTemplateDir('');
 	
-		$smarty->setLeftDelimiter("<{");
-		$smarty->setRightDelimiter("}>");
-		
-		return $smarty;
-	}
-	return null;
+	//
+	$smarty->setCompileDir( "$securePath/caches/smarty/templates_c" );
+	$smarty->setCacheDir(     "$securePath/caches/smarty/cache"       );
+	$smarty->setConfigDir(   "$securePath/caches/smarty/configs"     );
+
+	//
+	$smarty->setLeftDelimiter("<{");
+	$smarty->setRightDelimiter("}>");
+	
+	return $smarty;
 }

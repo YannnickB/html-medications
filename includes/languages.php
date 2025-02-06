@@ -1,63 +1,71 @@
 <?php
 
+//
 global $globalLanguages;
 
-$globalLanguages = array();
-if ( isset( $config["securePath"] ) ){
-	//
-	foreach ( $globalLanguages as $code => $language ){ 	
-		//echo __FILE__ . " line " . __LINE__ . " language=<pre>"; print_r($language); echo "</pre>";
-		$config["LanguagesCodes"][] = $code;
-	}
-}
+// Get languages
+$globalLanguages = includesLanguages_GetLanguages( $pdo );
 
-//echo "config-server.php serverConfig: <pre>"; print_r($serverConfig); echo "</pre>";
+// Set lang from _GET, _SESSION or config
+includesLanguages_AutoSetLang();
 
 
-// MERGE INIT CONFIG WITH CONFIG
-//$config = array_merge( $config, $serverConfig );
-//$config["languages"] = $globalLanguages;
-
-//echo "<br/><br/><br/><br/><br/><br/>";
-//echo "<h1>User include</h1>";
-//echo "<pre>"; print_r($_POST); echo "</pre>";
-//echo "<pre>"; print_r($_SERVER); echo "</pre>";
-//echo "<pre>"; print_r($config); echo "</pre>";
-
-
-
-
-//
-//global $globalLanguages;
-$globalLanguages = configLoadLanguages( $pdo );
-//echo __FILE__ . " line " . __LINE__ . " config.php globalLanguages: <pre>"; print_r($globalLanguages); echo "</pre>";
-$config["languages"] = $globalLanguages;
-
-
-// Get lang from parameter or default
-configAutoSetLang();
-
-
-// region LANGUAGES
-
-/** */
-function configLoadLanguages( $pdo ){
-	$languagesObject = new Languages($pdo);
-	
-
-	// Reset selected
+/** 
+ * Get languages  
+ */
+function includesLanguages_GetLanguages( $pdo ){
 	$data = [];
-	foreach ( $languagesObject->fetchAll() as $key => $language ){ 	
+	foreach ( (new Languages($pdo))->fetchAll() as $language ){ 	
 		$data[ $language["LanguageCode"] ] = [ "selected" => false ];
 	}
-
 	return $data;
 }
 
-/** */
-function configRefreshLanguages( $lang, $from ){
-	global $config, $globalLanguages, $smarty;
-	//echo "configRefreshLanguages() lang: ".$lang.", from: $from<br/>";
+
+/** 
+ * Auto set lang from _GET parameters, otherwise from user _SESSION, otherwise from default lang from config
+ */
+function includesLanguages_AutoSetLang(){
+	global $config, $_SESSION;
+
+	// From _GET parameters
+	$lang = $_GET["lang"] ?? null;
+
+	// From user session
+	if ($lang == null){
+		if ( isset( $_SESSION["lang"] ) ) {
+			$lang = $_SESSION["lang"];
+		}
+	}
+
+	// Default from config
+	if ($lang == null) $lang = $config["defaultLangCode"];
+	
+	// Default hardcoded
+	if ($lang == null) $lang = "en";
+
+	// Set effective language
+	includesLanguages_SetEffectiveLang( $lang );
+}
+
+
+/**
+ * Set effective lang in $config var and in user SESSION, set selected language in $globalLanguages and $config["language"], load locales
+ */
+function includesLanguages_SetEffectiveLang( $lang ){
+	global $config, $_SESSION;
+	$config["lang"] = $lang;
+	$_SESSION["lang"] = $lang;
+	includesLanguages_RefreshLanguages( $config["lang"] );
+	includesLanguages_LoadLocales( $config["lang"] );
+}
+
+
+/** 
+ * Set selected language in $globalLanguages and set language infos in $config["language"]
+ */
+function includesLanguages_RefreshLanguages( $lang ){
+	global $config, $globalLanguages;
 
 	// Reset selected
 	foreach ( $globalLanguages as $key => $language ){ 	
@@ -66,65 +74,33 @@ function configRefreshLanguages( $lang, $from ){
 	
 	// Set select language
 	$globalLanguages[$lang]["selected"] = true;
+
+	// Set language infos in config
 	$config["language"] = $globalLanguages[$lang];
 
 }
 
-/** */
-function configAutoSetLang(){
-	global $config, $_SESSION;
-	$lang = ( isset( $_GET["lang"] ) ) ? $_GET["lang"] : null;
-	if ($lang == null){
-		if ( isset( $_SESSION["lang"] ) ) {
-			$lang = $_SESSION["lang"];
-		}
-	}
-	// Default from config
-	if ($lang == null) $lang = $config["defaultLangCode"];
-	// Default
-	if ($lang == null) $lang = "en";
-	configSetLang( $lang, "configAutoSetLang()" );
-}
 
-/** */
-function configSetLang( $lang, $from ){
-	global $config, $_SESSION;
-	$config["lang"] = $lang;
-	$_SESSION["lang"] = $lang;
-	configRefreshLanguages( $config["lang"], $from . " / configSetLang()" );
-	configLoadLocales( $config["lang"] );
-}
-
-// endregion 
-
-
-
-
-// region LOCALES
-
-/** */
-function configLoadLocales( $lang ){
+/** 
+ * 
+ */
+function includesLanguages_LoadLocales( $lang ){
 	global $config, $locales;
-	//echo __FILE__ . " line " . __LINE__ . "( lang=$lang )<br/>";
 	//echo __FILE__ . " line " . __LINE__ . "( lang=$lang ) <b>config</b><pre>"; print_r($config); echo "</pre>";
 
-	$locales = array();
+	$locales = [];
 	
 	$files = glob($config["localesFolderPath"] . "/no-translate/*.json");
 	foreach ( $files as $key => $file ){
-		//echo $file."<br/>";
 		$jsonString = file_get_contents( $file );
 		$locales = array_merge( $locales, json_decode($jsonString, true) );
 	}
 	
 	$files = glob($config["localesFolderPath"] . "/".$lang."/*.json");
 	foreach ( $files as $key => $file ){
-		//echo $file."<br/>";
 		$localesJsonString = file_get_contents( $file );
 		$locales = array_merge( $locales, json_decode($localesJsonString, true) );
 	}
 	
-	//echo "<pre>"; print_r($locales); echo "</pre>";
+	//echo "<pre>" . json_encode($locales, JSON_PRETTY_PRINT) . "</pre><br/>";
 }
-
-// endregion
